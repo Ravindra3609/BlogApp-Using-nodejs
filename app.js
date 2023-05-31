@@ -7,7 +7,18 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 
+//
+import {fileURLToPath} from 'url';
+
+
 const connectDB = require('./server/config/db');
+
+//esmodule fix
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+
+
 const { isActiveRoute } = require('./server/helpers/routeHelpers');
 
 const app = express();
